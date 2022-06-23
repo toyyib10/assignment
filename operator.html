@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body style="background-image:linear-gradient(to bottom right, #FDFCFB, #E2D1C3); background-repeat:no-repeat; background-size:cover;">
+  <section align="center" style="margin-top:30px;">
+    <input id="valueOne" style="border: none; height:30px; border-radius:15px; padding-left:10px;" type="number" placeholder="Enter Column">
+    <input style="border: none; height:30px; border-radius:15px; padding-left:10px;"  id="valueTwo" style="margin-left:2%; margin-right:2%;" type="number" placeholder="Enter Row">
+    <select style="border: none; height:30px; border-radius:15px; padding-left:10px;"  name="" id="operator">
+      <option value="add">addition</option>
+      <option value="sub">subtraction</option>
+      <option value="mult">multiplication</option>
+      <option value="divi">division</option>
+    </select>
+  </section>
+  <div align="center" style="margin-top:10px;">
+    <button style="border:none; background-color:white; height:30px; border-radius:15px; padding-left:10px;"  onclick="gen()">Generate</button>
+  </div>
+  <section>
+    <table id="disp" align="center" style="margin-top:30px; border-radius:10px;" border="1">
+
+    </table>
+  </section>
+  <script> 
+      var tab = `<tr>`
+    function gen(){
+      disp.innerHTML = null;
+      val1 = Number(valueOne.value)
+      val2 = Number(valueTwo.value)
+      if (operator.value == 'add'){
+        for(i = 1; i <= val2; i++){
+          for(j = 1; j <= val1; j++){
+            tab += `<td> ${j} + ${i} = ${j + i} </td>`
+          }
+          tab += `</tr>`
+        }
+        disp.innerHTML = tab;
+        tab = '';
+      }
+      else if (operator.value == 'sub'){
+        for(i = 1; i <= val2; i++){
+          for(j = 1; j <= val1; j++){
+            tab += `<td> ${j} - ${i} = ${j - i} </td>`
+          }
+          tab += `</tr>`
+        }
+        disp.innerHTML = tab;
+        tab = '';
+      }
+      else if (operator.value == 'mult'){
+        for(i = 1; i <= val2; i++){
+          for(j = 1; j <= val1; j++){
+            tab += `<td> ${j} X ${i} = ${j * i} </td>`
+          }
+          tab += `</tr>`
+        }
+        disp.innerHTML = tab;
+        tab = '';
+      }
+      else if (operator.value == 'divi'){
+        for(i = 1; i <= val2; i++){
+          for(j = 1; j <= val1; j++){
+            tab += `<td> ${j} / ${i} = ${Math.round(j / i)} </td>`
+          }
+          tab += `</tr>`
+        }
+        disp.innerHTML = tab;
+        tab = '';
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <table align='center'>
+    <tr>
+      <td><input type="text" id="inputHour" value="0"></td>
+      <td>:</td>
+      <td><input type="text" id="inputMin" value="0"></td>
+      <td>:</td>
+      <td><input type="text" id="inputSec" value="0"></td>
+      <td>.</td>
+      <td><input type="text" id="inputMl" value="0"></td>
+    </tr>
+    <tr>
+      <td><input type="text" id="hour" value="0"></td>
+      <td>:</td>
+      <td><input type="text" id="min" value="0"></td>
+      <td>:</td>
+      <td><input type="text" id="sec" value="0"></td>
+      <td>.</td>
+      <td><input type="text" id="ml" value="0"></td>
+    </tr>
+    <tr align="center">
+      <td colspan="7"><button onclick="count()">>></button></td>
+    </tr>
+  </table>
+  <script>
+    function count(){
+      var h = parseInt(hour.value)
+      var u = parseInt(ml.value)
+      var s = parseInt(sec.value)
+      var m = parseInt(min.value)
+      var iH = parseInt(inputHour.value);
+      var iM = parseInt(inputMin.value);
+      var iS = parseInt(inputSec.value);
+      var iU = parseInt(inputMl.value);
+      if(iH == h ){
+        hour.value = 0
+        inputHour.value = 0
+        if (iM == m){
+          min.value = 0
+          inputMin.value = 0
+          if(iS == s){
+            sec.value = 0
+            inputSec.value = 0
+            if(iU == u){
+              ml.value = 0
+              inputMl.value = 0
+              alert('times up')
+            }
+          }
+        }
+        
+      }
+      if (u >= 100){
+        if (s >= 60){
+          if (m >= 60){
+            m = -1
+            h = h + 1
+            hour.value = h
+          }
+          s = -1; 
+          m = m + 1;
+          min.value = m;
+        }
+        u = -1;
+        s = s + 1;
+        sec.value = s;
+      }
+      u = u + 1;
+      ml.value = u;
+      setTimeout('count()',10)
+     
+
+    }
+    
+  </script>
+</body>
+</html>

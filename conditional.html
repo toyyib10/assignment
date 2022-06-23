@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <h1 align = 'center'>Grading System</h1>
+  <div align = 'center'>
+    <input type="number" placeholder="Enter your score" id="myScore">
+    <button onclick="checkGrade()">Check Grade</button>
+  </div>
+  <div align = "center" id="showGrade"></div>
+
+
+
+  <script>
+    function checkGrade(){
+      var  score = parseFloat(myScore.value)
+      if(score < 40 && score >= 0){
+        showGrade.innerText = 'F'
+      }
+      else if(score >= 40 && score <= 44){
+        showGrade.innerText = 'E'
+      }
+      else if(score >= 44 && score <= 49){
+        showGrade.innerText = 'D'
+      }
+      else if(score >= 50 && score <= 59){
+        showGrade.innerText = 'C'
+      }
+      else if(score >= 60 && score <= 69){
+        showGrade.innerText = 'B'
+      }
+      else if(score >= 70 && score <= 100){
+        showGrade.innerText = 'A'
+      }
+      else{
+        alert('type a valid score')
+      }
+    }
+  </script>
+</body>
+</html>

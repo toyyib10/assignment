@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <input type="text" placeholder="Name" id="myName">
+  <input type="number" placeholder="Age" id="age">
+  <input type="text" placeholder="School" id="sch">
+  <button onclick="store()">Store value</button>
+  <div id="output"></div>
+  <script>
+      
+      function store(){
+        var mn = myName.value;
+        var ma = age.value;
+        var ms = sch.value;
+        var info = {
+          name: mn,
+          ma: ma,
+          school: ms
+        };
+        console.log(info)
+        output.innerText = `My name is ${info['name']}, I am ${info['ma']} years old School is ${info['school']}`;
+      }
+  </script>
+</body>
+</html>

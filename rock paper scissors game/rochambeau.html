@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="rochambeau.css">
+  <title>Document</title>
+</head>
+<body class="body">
+  <section class="secOne">
+    <p class="textOne">ROCHAMBEAU</p>
+    <div>
+      <img class="image" src="roch.jpeg" alt="">
+    </div>
+  </section>
+  <section class="secTwo">
+    <div class="divOne">
+      <p class="textTwo">PLAYER NAME</p>
+      <form action="">
+        <label align='center' class="lab" for="player name">Enter Nickname
+          <input class="input" type="text" id="playerName" value="">
+        </label>
+      </form>
+    </div>
+    <div class="divTwo">
+      <p class="textTwo">Number of Rounds you want to play</p>
+      <form action="">
+        <label align='center' class="lab" for="player name">Enter Rounds 
+          <input disabled type="number" class="input" name="" id="round" placeholder="We are currently working on it">
+        </label>
+      </form>
+    </div>
+  </section>
+  <section class="secThree">
+    <div>
+      <p class="textThree">Rock : 1 , Paper : 2 , Scissors : 3;</p>
+    </div>
+    <div class="subDiv">
+      <div class="subDivOne">
+        <p>PLAYER</p>
+        <form action="">
+            <label align='center' class="lab" for="value">Enter Value:</label><br> 
+            <input type="number" class="input" name="" id="value" placeholder="Number">
+            <div id="outputThree" class="output"></div>
+        </form>
+      </div>
+      <div class="subDivTwo">
+        <p>COMPUTER</p>
+        <div id="computerResult" class="computer"></div>
+      </div>
+    </div>
+    <div class="divBut"><button class="button" onclick="pla()">Play</button></div>
+  </section>
+  <section class="secFour">
+    <div id="outputOne" class="output"></div>
+    <div id="outputTwo" class="output"></div>
+    <div id="outputFour" class="output"></div>
+  </section>
+  <script src="rochambeau.js"></script>
+  
+</body>
+</html>

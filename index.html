@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <table border="2" align="center">
+    <tr >
+      <td colspan="5">
+          <input type="text" placeholder="enter your value one" id="val1">
+      </td>
+    </tr>  
+    <tr>
+      <td>
+          <input type="text" placeholder="enter your value two" id="val2">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button onclick="addition()">+</button>
+        <button onclick="subtraction()">-</button>
+        <button onclick="multiplication()">X</button>
+        <button onclick="division()">/</button>
+      </td>
+    </tr> 
+  </table>
+  <script>
+    
+    function addition(){
+      var firstValue = Number(val1.value)
+      var secondValue = Number(val2.value)
+      alert(firstValue + secondValue)
+    }
+    function subtraction(){
+      var firstValue = Number(val1.value)
+      var secondValue = Number(val2.value)
+      alert(firstValue - secondValue)
+    }
+    function multiplication(){
+      var firstValue = Number(val1.value)
+      var secondValue = Number(val2.value)
+      alert(firstValue * secondValue)
+    }
+    function division(){
+      var firstValue = Number(val1.value)
+      var secondValue = Number(val2.value)
+      alert(firstValue / secondValue)
+    }
+  </script>
+</body>
+</html>

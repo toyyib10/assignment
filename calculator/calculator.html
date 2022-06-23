@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="calculator.css">
+  
+</head>
+<body>
+  <section class="bogy">
+    <div class="part0">
+      <div  class="h">
+         <input style="width: 25px; border: none;" type="text" value="00">
+      </div>
+      <div class="m">
+        <input style="width: 25px; border: none;" type="text" value="00">
+      </div>
+      <div class="s" >
+        <input style="width: 25px; border: none;" type="text" value="00">
+      </div>
+    </div>
+    <!-- input -->
+    <div class ="part">
+      <div>
+        <input class="ino" id="ino" type="text"  value=" ">
+      </div>
+       
+      <div>
+          <input class="inp" id="inp" disabled type="text" value="off">
+      </div>
+    </div>
+
+    <div class="part2">
+      <div class="ok1">
+        <div class="g1">
+          <table>
+            <tr>
+              <td>
+                <button class="bd">SHIFT</button>
+              </td>
+              <td>
+                <button style="margin-left:4px;" class="bdw">ALPHA</button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <button  style="margin-left:-4px; font-size:0.5em;"  class="bds">CALC</button>
+              </td>
+              <td>
+                <button class="bds">Fx</button>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="g2">
+            <button class="bot">REPLAY</button>
+        </div>
+        <div class="g3">
+          <table style="margin-left:4px;">
+            <tr>
+              <td>
+                <button class="bd" style="font-size:0.4em;"> MODE</button>
+              </td>
+              <td>
+                <button style="margin-left:3px; font-size:0.8em; text-align:center;" id="on" onclick="del('ON')" class="bdw"> ON</button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <button style="margin-left:-4px; font-size:0.6em;" class="bds">x <sup>-1</sup></button>
+              </td>
+              <td>
+                <button class="bds">log</button>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="ok2">
+        <table>
+          <tr>
+            <td><button class="btta">n/d</button></td>
+            <td><button class="btt">sqt</button></td>
+            <td><button class="btt">x <sup>2</sup></button></td>
+            <td><button class="btt">x <sup>'</sup></button></td>
+            <td><button class="btt">log</button></td>
+            <td><button class="btt">ln</button></td>
+          </tr>
+          <tr>
+            <td><button class="btta">(-)</button></td>
+            <td><button class="btt">._,,</button></td>
+            <td><button class="btt">hyp</button></td>
+            <td><button class="btt">sin</button></td>
+            <td><button class="btt">cos</button></td>
+            <td><button class="btt">tan</button></td>
+          </tr>
+          <tr>
+            <td><button class="btta">SD</button></td>
+            <td><button style="font-size:0.6em;" class="btt">ENG</button></td>
+            <td><button class="btt">(</button></td>
+            <td><button class="btt">)</button></td>
+            <td><button style="font-size:0.4em;" class="btt">S<->D</button></td>
+            <td><button class="btt"> M-</button></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="part3">
+       <table class="butt">
+         <tr>
+           <td>
+             <span style=" margin-left:7px; font-size:0.6em; color:rgb(201, 74, 15);">CONST</span> <br>
+             <button onclick="button(7)" class="a">7</button>
+           </td>
+           <td>
+            <span style=" margin-left:7px;font-size:0.6em; color:rgb(201, 74, 15);">CONV</span> <br>
+            <button onclick="button(8)" class="a">8</button>
+          </td>
+          <td>
+            <span style=" margin-left:13px; font-size:0.6em; color:rgb(201, 74, 15);">CLR</span> <br>
+            <button onclick="button(9)" class="a">9</button>
+          </td>
+          <td>
+            <span style=" margin-left:13px; font-size:0.6em; color:rgb(201, 74, 15);">INS</span> <br>
+            <button  style="background-color:orangered;" onclick="del('DEL')" class="a">DEL</button>
+          </td>
+          <td>
+            <span style=" margin-left:13px;font-size:0.6em; color:rgb(201, 74, 15);">OFF</span> <br>
+            <button style="background-color:orangered;" onclick="del('AC')" class="a">AC</button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span style=" color:rgb(201, 74, 15); font-size:0.54em;">[MATRIX]</span> <br>
+            <button onclick="button(4)" class="b">4</button>
+          </td>
+          <td>
+            <span style="font-size:0.54em; color:rgb(201, 74, 15);">[VECTOR]</span> <br>
+            <button onclick="button(5)" class="b">5</button>
+          </td>
+          <td>
+            <span style=" margin-left:8px; color:rgb(201, 74, 15);"></span> <br>
+            <button onclick="button(6)" class="b">6</button>
+          </td>
+          <td>
+            <span style=" margin-left:13px; font-size:0.7em; color:rgb(201, 74, 15);">nPr</span> <br>
+            <button onclick="math('*')" class="b">*</button>
+          </td>
+          <td>
+            <span style=" margin-left:13px; font-size:0.7em; color:rgb(201, 74, 15);">nCr</span> <br>
+            <button onclick="math('/')" class="b">/</button>
+          </td>
+        </tr>
+        <tr>
+            <td>
+              <span style=" margin-left:6px; font-size:0.6em; color:rgb(201, 74, 15);">[STAT]</span> <br>
+              <button onclick="button(1)" class="b">1</button>
+            </td>
+            <td>
+                <span style=" margin-left:2px; font-size:0.54em; color:rgb(201, 74, 15);">[CMPLX]</span> <br>
+              <button onclick="button(2)" class="b">2</button>
+            </td>
+            <td>
+              <span style=" margin-left:7px; font-size:0.54em; color:rgb(201, 74, 15);">[BASE]</span> <br>
+              <button onclick="button(3)" class="b">3</button>
+            </td>
+            <td>
+              <span style="margin-left:13px; font-size:0.6em; color:rgb(201, 74, 15);">Pol</span> <br>
+              <button onclick="math('+')" class="b">+</button>
+            </td>
+            <td>
+              <span style=" margin-left:13px; font-size:0.6em; color:rgb(201, 74, 15);">Rec</span> <br>
+              <button onclick="math('-')" class="b">-</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span style=" margin-left:13px; font-size:0.6em; color:rgb(201, 74, 15);">Rnd</span> <br>
+              <button onclick="button(0)" class="b">0</button>
+            </td>
+            <td>
+              <span style="margin-left:4px;font-size:0.6em; color:rgb(201, 74, 15);">Ran# RI</span> <br>
+              <button onclick="button('.')" class="b">.</button>
+            </td>
+            <!-- ffdkd -->
+            <td style="padding-top:5px;">
+              <span style="font-size:0.6em;margin-left:9px; margin-bottom:-15px; color:red;display:flex; "><span style="margin-right:14px; color:rgb(201, 74, 15);">x</span>   e</span> <br>
+              <button onclick="math('%')"  class="b">%</button>
+            </td>
+            <!-- idd -->
+            <td>
+              <span style=" margin-left:8px; font-size:0.6em; color:rgb(201, 74, 15);">DRG></span> <br>
+              <button onclick="del('ans')" class="b">Ans</button>
+            </td>
+            <!-- dkjdk -->
+            <td>
+              <span style=" margin-left:8px; color:rgb(201, 74, 15);"></span> <br>
+              <button onclick="result()" class="b">=</button>
+            </td>
+        </tr>  
+        </table>
+    </div>
+  </section>
+  <script src="calculator.js"></script>
+</body>
+</html>

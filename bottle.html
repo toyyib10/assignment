@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div style="margin-bottom:30px;" align="center">
+      <button onclick="bottle()">display</button>
+  </div>
+  <div align="center" id="disp">
+  </div>
+  <script>
+    function bottle(){
+      for (j = 99; j >= 1; j--){
+        if (j == 1){
+          val +=`${j} bottles of coke on the wall, ${j} bottles of coke. <br>Take one down and pass it around, no more bottles of coke on the wall.<br> No more bottles of coke on the wall, no more bottles of coke. <br> Go to the store and buy some more, 99 bottles of coke on the wall.`
+        }
+        else{
+          var val = `${j} bottles of coke on the wall, ${j} bottles of coke. <br>`
+          val += `Take one down and pass it around, ${j - 1} bottles of coke on the wall. <br>`
+        }
+        disp.innerHTML += val;
+      }
+    }
+  </script>
+</body>
+</html>

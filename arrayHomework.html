@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <table border="1"align="center">
+    <tr>
+      <td colspan="5" align="center">
+        <input type="text" id="myValue" placeholder="Enter array">
+      </td>
+    </tr>
+    <tr>
+      <td colspan="5" align="center">
+        <button onclick="store()">Store Value</button>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button onclick="sor()">sort</button>
+      </td>
+      <td>
+        <button onclick="toStrin()">toString</button>
+      </td>
+      <td>
+        <button onclick="unshif()">Unshift</button>
+      </td>
+      <td>
+          <button onclick="valueO()">valueOf</button>
+      </td>
+      <td>
+          <button onclick="lastIndexO()">lastIndexOf</button>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3"  align=center>
+        <input type="text" id="wor" placeholder="For unshift and lastIndexOf">
+      </td>
+      <td colspan="2"  align=center>
+        <input type="text" id="val" placeholder="For unshift and lastIndexOf">
+      </td>
+    </tr>
+  </table>
+  <div id="output"></div>
+  <div id="info"></div>
+  <div id="result"></div>
+  <script>
+   var arr = [];
+   function store(){
+    arr.push(myValue.value)
+    output.innerText = arr;
+   }
+   function sor(){
+    info.innerText = 'to arrange value ascending order';
+    arr.sort()
+    result.innerText = arr;
+   }
+   function toStrin(){
+    info.innerText = 'to turn array to string which seperated by comma';
+    var res = arr.toString();
+    result.innerText = res;
+   }
+   function unshif(){
+    info.innerText = 'to add new item to the begining of array';
+    var word = wor.value;
+    arr.unshift(word);
+    result.innerText = arr;
+   }
+   function valueO(){
+    var word = wor.value;
+    info.innerText = 'return value of the original  array';
+    var res = arr.valueOf();
+    result.innerText = res;
+   }
+   function lastIndexO(){
+    var word = wor.value;
+    var value = val.value;
+    info.innerText = 'finds the index of the last item in an array';
+    var res = arr.lastIndexOf(word,Number(value));
+    result.innerText = res;
+   }
+  </script>
+</body>
+</html>
