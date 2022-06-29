@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="weather.css">
+  <title>Document</title>
+</head>
+<body onload="loadData()" onload="getLocation()" class = "bod">
+  <div class="divOne">
+    <div class="divTwo">
+      <div style="display:flex;">
+        <button onclick="getData()" class="btn">
+          <img style="width:30px;" src="../location.png" alt="">
+        </button>
+        <input type="text" value="ogbomoso" id="cit">
+      </div>
+      <div style="margin-top:20px;">
+        <div style=" display:flex;">
+          <input type="text" class="inpOne" disabled value="00.00" id="temp">
+          <span class="spanOne">o</span>
+          <span class="spanTwo">C</span>
+        </div>
+        <div id="des"></div>
+        <div id="humidity" style="margin-top:20px; font-size:20px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;"></div>
+      </div>
+    </div>
+    <div id="disp" style="padding-left:20px;">
+      <div id="da"></div>
+      <div style="font-size:3em; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;" id="dy"></div>
+    </div>
+  </div>
+  <script>
+    let convertedResponse = ''
+    let city = '';
+    let dateArray = [];
+    let c = true
+    //const getLocation = ()=>{
+     // navigator.geolocation.getCurrentPosition(
+    //    (position)=>{
+     //     console.log(position , 0)
+       // }
+     // )
+    //}
+    async function loadData(){
+      city = cit.value;
+      const url =`https://api.openweathermap.o rg/data/2.5/weather?q=${city}&appid=1475f9350b35a7b2e9833bcba802614f&units=metric`
+      const url2 =  `https://api.ipgeolocation.io/timezone?apiKey=680cc1c7a6f645ae893d6c578ecb1ac9&location=${city}` 
+      let response2 = await fetch(url2)   
+      convertedResponse2 = await response2.json()
+      dateArray = convertedResponse2.date_time_txt.split(',')
+      let [day , date, dat] = dateArray
+      let [ , , time] = dat.split(' ')
+      console.log(day,date,time)
+      let amPm = time.split(':')
+      let [h , m, s] = amPm
+      if (h <= 12){
+        da.innerHTML = `<span style="font-size: 4em;">${time}</span> <span style="font-size:2em;  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">AM</span>`
+      }
+      else {
+        da.innerHTML = `<span style="font-size: 4em;">${time}</span> <span style="font-size:2em;  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">PM</span>`
+      }
+      dy.innerText = ` ${day} ${date}`
+      let response = await fetch(url)
+      convertedResponse = await response.json()
+      var val = convertedResponse.main.temp;
+      console.log(convertedResponse)
+      temp.value =  val  
+      var description = convertedResponse.weather[0].description
+      des.innerText = description;
+      var humid = convertedResponse.main.humidity
+      humidity.innerHTML = `humidity : ${humid}%`
+    }
+    
+    async function getData(){
+      city = cit.value;
+      c = false
+      const url2 =  `https://api.ipgeolocation.io/timezone?apiKey=680cc1c7a6f645ae893d6c578ecb1ac9&location=${city}` 
+      let response2 = await fetch(url2)   
+      convertedResponse2 = await response2.json()
+      console.log(convertedResponse2.date_time_txt.split(' '))
+      dateArray = convertedResponse2.date_time_txt.split(',')
+      let [day , date, dat] = dateArray
+      let [ , , time] = dat.split(' ')
+      let amPm = time.split(':')
+      let [h ,m , s] = amPm
+      if (h <= 12){
+        da.innerHTML = `<span style="font-size: 4em;">${time}</span> <span style="font-size:2em;  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">AM</span>`
+      }
+      else {
+        da.innerHTML = `<span style="font-size: 4em;">${time}</span> <span style="font-size:2em;  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">PM</span>`
+      }
+      myFunc()
+      console.log(day,date,time)
+      
+      dy.innerText = ` ${day} ${date}`
+      const url =`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=1475f9350b35a7b2e9833bcba802614f&units=metric`
+      let response = await fetch(url)
+      convertedResponse = await response.json()
+      var val = convertedResponse.main.temp;
+      temp.value = val
+      var description = convertedResponse.weather[0].description
+      des.innerText = description;
+      var humid = convertedResponse.main.humidity
+      humidity.innerHTML = `humidity : ${humid}%`
+      console.log(convertedResponse)
+    }
+    //while(true){
+    //  getData()
+    //  if (c == true){
+    //    break
+    //  }
+    //}
+  </script>
+</body>
+</html>
