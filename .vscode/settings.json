@@ -1,4 +1,5 @@
 {
   "python.pythonPath": "C:\\Users\\INSPIRON\\AppData\\Local\\Programs\\Python\\Python310\\python.exe",
-  "python.linting.enabled": false
+  "python.linting.enabled": false,
+  "liveServer.settings.port": 5501
 }
