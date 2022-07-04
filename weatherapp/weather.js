@@ -1,8 +1,11 @@
-    let convertedResponse = ''
-    let city = '';
-    let dateArray = [];
-    let lat;
-    let long;
+   let convertedResponse = ''
+   let city = '';
+   let dateArray = [];
+   let lat;
+   let long;
+   let h;
+   let m;
+   let s;
    function loadData(){
      navigator.geolocation.getCurrentPosition(
         async (position)=>{
@@ -14,7 +17,7 @@
           console.log(convertedResponse)
           cit.value = convertedResponse.name;
           var val = convertedResponse.main.temp;
-          temp.value = val 
+          temp.value = val.toFixed(2)
           var description = convertedResponse.weather[0].description;
           des.innerText = description;
           var feel = convertedResponse.main.feels_like
@@ -27,7 +30,7 @@
           let [day , date, dat] = dateArray;
           let [ , , time] = dat.split(' ');
           let amPm = time.split(':');
-          let [h , m, s] = amPm;
+          [h , m, s] = amPm;
           if (h <= 12){
             da.innerHTML = `<span style="font-size: 4em; font-family:'Trebuchet MS','Lucida Sans Unicode','Lucida Grande','Lucida Sans',Arial,sans-serif;">${time}</span> <span style="font-size:2em;  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">AM</span>`
           }
@@ -49,7 +52,7 @@
       let [day , date, dat] = dateArray
       let [ , , time] = dat.split(' ')
       let amPm = time.split(':')
-      let [h ,m , s] = amPm
+      [h ,m , s] = amPm
       if (h <= 12){
         da.innerHTML = `<span style="font-size: 4em; font-family:'Trebuchet MS','Lucida Sans Unicode','Lucida Grande','Lucida Sans',Arial,sans-serif;">${time}</span> <span style="font-size:2em;  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; ">AM</span>`
       }
@@ -61,7 +64,7 @@
       let response = await fetch(url)
       convertedResponse = await response.json()
       var val = convertedResponse.main.temp;
-      temp.value = val
+      temp.value = val.toFixed(2)
       var description = convertedResponse.weather[0].description
       des.innerText = description;
       var feel = convertedResponse.main.feels_like
