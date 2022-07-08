@@ -6,6 +6,7 @@
    let h;
    let m;
    let s;
+   let amPm;
    function loadData(){
      navigator.geolocation.getCurrentPosition(
         async (position)=>{
@@ -22,14 +23,15 @@
           des.innerText = description;
           var feel = convertedResponse.main.feels_like
           var humid = convertedResponse.main.humidity;
-          humidity.innerHTML = `Feels Like : ${feel}  <sup style="font-size:0.6em; font-family:'Trebuchet MS', 'Lucida Sans Unicode','Lucida Grande', 'Lucida Sans',Arial, sans-serif;">o</sup><span style="font-size:1em;margin-top:20px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans',Arial, sans-serif;">C</span> <br> Humidity : ${humid}%`
+          var windSpeed = convertedResponse.wind.speed;
+          humidity.innerHTML = `Feels Like : ${feel}  <sup style="font-size:0.6em; font-family:'Trebuchet MS', 'Lucida Sans Unicode','Lucida Grande', 'Lucida Sans',Arial, sans-serif;">o</sup><span style="font-size:1em;margin-top:20px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans',Arial, sans-serif;">C</span> <br> Humidity : ${humid}% <br> Wind Speed : ${windSpeed} m/s`
           const url2 =  `https://api.ipgeolocation.io/timezone?apiKey=680cc1c7a6f645ae893d6c578ecb1ac9&lat=${lat}&lon=${long}` 
           let response2 = await fetch(url2);   
           convertedResponse2 = await response2.json();
           dateArray = convertedResponse2.date_time_txt.split(',');
           let [day , date, dat] = dateArray;
           let [ , , time] = dat.split(' ');
-          let amPm = time.split(':');
+          amPm = time.split(':');
           [h , m, s] = amPm;
           if (h <= 12){
             da.innerHTML = `<span style="font-size: 4em; font-family:'Trebuchet MS','Lucida Sans Unicode','Lucida Grande','Lucida Sans',Arial,sans-serif;">${time}</span> <span style="font-size:2em;  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">AM</span>`
@@ -41,7 +43,6 @@
         }
       ) 
     }
-    
     async function getData(){
       city = cit.value;
       const url2 =  `https://api.ipgeolocation.io/timezone?apiKey=680cc1c7a6f645ae893d6c578ecb1ac9&location=${city}` 
@@ -51,7 +52,7 @@
       dateArray = convertedResponse2.date_time_txt.split(',')
       let [day , date, dat] = dateArray
       let [ , , time] = dat.split(' ')
-      let amPm = time.split(':')
+      amPm = time.split(':')
       [h ,m , s] = amPm
       if (h <= 12){
         da.innerHTML = `<span style="font-size: 4em; font-family:'Trebuchet MS','Lucida Sans Unicode','Lucida Grande','Lucida Sans',Arial,sans-serif;">${time}</span> <span style="font-size:2em;  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; ">AM</span>`

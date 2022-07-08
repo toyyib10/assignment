@@ -7,7 +7,7 @@
 .divOne{
   width:70%; 
   height:400px; 
-  display:flex; 
+  display: flex; 
   margin-top:30px; 
   padding-top:10px; 
   padding-bottom:10px; 
@@ -60,4 +60,19 @@
 .divTwo{
   width:50%;
 
+}
+@media screen and (max-width: 600px) {
+  #disp{
+    border-left: none;
+  }
+  #cit{
+    border:none;
+    background-color:transparent; 
+    font-size:30px; 
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+  .divOne{
+    display: flex;
+    flex-direction: column;
+  }
 }

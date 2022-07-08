@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<style>
+  .red{
+    height: 100px;
+    width: 100px;
+    background-color:red; 
+  }
+  .re{
+    height: 100px;
+    width: 100px;
+    background-color:green;
+  }
+</style>
+<body>
+  <button id="change" onclick="text()">Text</button>
+  <div id="ch"></div>
+  <script>
+    const text = () => {
+      //let regexForPhone = /^[0][789][\d]{9}$/
+     // let r = regexForPhone.test("07030668649")
+     // if (r){
+      //  change.className = "re"
+      //}
+     // else{
+     //   change.className = "red"
+    //}
+    //ch.innerText = r
+    let regexForEmail = /^([\w]+)([@])([a-z]{2,9})([.])([a-z]{2,5})([.][a-z]{2,5})?$/
+    alert(regexForEmail.test('yekeentoyyib@gmail.com'))
+    }
+  </script>
+</body>
+</html>
