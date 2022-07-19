@@ -1,0 +1,122 @@
+.style1{
+  margin-top: 10px;
+  flex-wrap: wrap;
+  justify-content:space-around;
+}
+.style2{
+  height: 200px;
+  border-radius: 10px;
+  justify-content: center; 
+  align-items:center; 
+  margin-bottom: 5px;
+  padding-left: 30px;
+  border: rgb(21, 209, 21);
+}
+#btn{
+  background-color: rgb(21, 209, 21);
+}
+.tdb{
+  border-right: 1px solid rgb(21, 209, 21);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#backgroudc {
+  border-radius: 20px;
+  padding: 50px 0;
+  padding-top: 30px;
+  box-shadow: 2px 2px 5px;
+  flex-direction:column;
+}
+.fit1{
+  justify-content: space-between;
+}
+.style3{
+  border-radius: 5px;
+  margin-top: 5px;
+}
+.form-label{
+  color: rgb(21, 209, 21);
+}
+.inp {
+  border-radius: 10px;
+  border: none;
+  color: rgb(21, 209, 21);
+  padding: 10px 0;
+  border-radius: 3px;
+  padding-left: 6px;
+  margin-bottom: 20px;
+
+}
+.style44{
+  display: block; 
+  margin-left: 10px;
+  border-radius:15px; 
+  box-shadow: 2px 2px 5px;
+}
+.style4{
+  display: none;
+}
+.td{
+  border-right: 1px solid rgb(21, 209, 21);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tds{
+  border-right: 1px solid rgb(21, 209, 21); 
+  text-align: center; 
+}
+.tdsb{
+  border-right: 1px solid rgb(21, 209, 21); 
+  text-align: center; 
+}
+.tdwb{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.fit22{
+  justify-content: space-between;
+}
+.tdw{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media only screen and (max-width:768px){
+  .style1{
+    flex-direction: column;
+    margin-top:30px;
+  }
+  .fit2{
+    justify-content: space-between;
+  }
+  .style2{
+    margin-top: 20px; 
+  }
+  .style3{
+    display: none;
+  }
+  .style4{
+    display: block;
+    margin-left: 10px;
+    border-radius:15px; 
+    box-shadow: 2px 2px 5px;
+  }
+  .style44{
+    display: none;
+  }
+  .style5{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+  }
+  .fit{
+    justify-content: space-between;
+  }
+  #backgroudc {
+    width: 280px;
+  }
+}

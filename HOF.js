@@ -5,9 +5,9 @@ let myArray2 = [
     {name:"Kunle",age:400,school:"LAUTECH"},
 ]
 // myArray.map((item,index,arr)=>{
-//     console.log(arr)
+//     console.log(item,index,arr)
 // })
-let filteredArray=myArray2.filter((item)=>item.name=="tolu")
+// let filteredArray=myArray2.filter((item)=>item.name=="Opeyemi")
 // console.log(filteredArray)
 // if(filteredArray){
 //     console.log("Hello")
@@ -37,6 +37,6 @@ const editItem = (index)=>{
     showDetails()
 }
 
-let lastArray = [
-    {name:"sola",age:300,note:[]}
-]
+// let lastArray = [
+//     {name:"sola",age:300,note:[]}
+// ]
