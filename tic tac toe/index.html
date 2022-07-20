@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="bootstrap.css">
   <title>Document</title>
 </head>
-<body> 
+<body onload="load()"> 
   <section class="d-flex align-items-center style1">
     <section class="style5">
       <div id="backgroudc" class="d-flex justify-content-center bg-dark align-items-center pt-4">
@@ -31,8 +31,13 @@
               <h1 id="tScore" style="text-align:center;">0</h1>
             </div>
           </div>
-          <div class="mt-3 w-75 ms-4">
-            <button class="btn fs-5 bt w-100" onclick="restart()" style="background-color:rgb(21, 209, 21);">Restart</button>
+          <div class="d-flex">
+            <div class="mt-4 w-50">
+              <button class="btn fs-5 bt mx-4 w-75" onclick="trestart()" style="background-color:rgb(21, 209, 21);">Restart</button>
+            </div>
+            <div class="mt-4 w-50">
+              <button class="btn fs-5 bt mx-4 w-75" onclick="cancel()" style="background-color:rgb(21, 209, 21);">Cancel</button>
+            </div>
           </div>
           <div class="mt-3 mb-3">
             <div class="fs-2" style="color:rgb(21, 209, 21); text-align:center;">Audio</div>
@@ -75,8 +80,13 @@
             <h1 id="tcScore" style="text-align:center;">0</h1>
           </div>
         </div>
-        <div class="mt-4 w-100">
-          <button class="btn fs-5 bt mx-4 w-75" onclick="trestart()" style="background-color:rgb(21, 209, 21);">Restart</button>
+        <div class="d-flex">
+          <div class="mt-4 w-50">
+            <button class="btn fs-5 bt mx-4 w-75" onclick="trestart()" style="background-color:rgb(21, 209, 21);">Restart</button>
+          </div>
+          <div class="mt-4 w-50">
+            <button class="btn fs-5 bt mx-4 w-75" onclick="tcancel()" style="background-color:rgb(21, 209, 21);">Cancel</button>
+          </div>
         </div>
         <div class="mt-3 mb-3">
           <div class="fs-2" style="color:rgb(21, 209, 21); text-align:center;">Audio</div>

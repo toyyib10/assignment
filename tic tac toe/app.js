@@ -1,6 +1,9 @@
 let key = "X";
 let check = false; 
 let audio = new Audio('Sia_-_Unstoppable_CeeNaija.com_.mp3')
+const load = () => {
+  alert("Welcome tic tac toe, register your name before you play, 'Cancel' is to is cancel a game in process if there is a mistake")
+}
 const start = () =>{
   if(pOne.value != '' && pTwo.value != ''){
     check = true;
@@ -343,10 +346,14 @@ const trestart = () =>{
   d7.innerText = "";
   d8.innerText = "";
   d9.innerText = "";
-  tcScore.innerText = "";
-  tScore.innerText = "";
-  oScore.innerText = "";
-  ocScore.innerText = "";
+  oDisp.innerText = "Player One";
+  ocDisp.innerText = "Player One";
+  tDisp.innerText = "Player Two";
+  tcDisp.innerText = "Player Two";
+  tcScore.innerText = 0;
+  tScore.innerText = 0;
+  oScore.innerText = 0;
+  ocScore.innerText = 0;
 
 }
 const restart = () =>{
@@ -361,15 +368,47 @@ const restart = () =>{
   d7.innerText = "";
   d8.innerText = "";
   d9.innerText = "";
-  oDisp.innerText = "";
-  ocDisp.innerText = "";
-  tDisp.innerText = "";
-  tcDisp.innerText = "";
-  tcScore.innerText = "";
-  tScore.innerText = "";
-  oScore.innerText = "";
-  ocScore.innerText = "";
+  oDisp.innerText = "Player One";
+  ocDisp.innerText = "Player One";
+  tDisp.innerText = "Player Two";
+  tcDisp.innerText = "Player Two";
+  tcScore.innerText = 0;
+  tScore.innerText = 0;
+  oScore.innerText = 0;
+  ocScore.innerText = 0;
   
+}
+const tcancel = () => {
+  if( d1.innerText != "" && d2.innerText != "" && d3.innerText != "" && d4.innerText != "" && d5.innerText != "" && d6.innerText != "" && d7.innerText != "" && d8.innerText != "" && d9.innerText != ""){
+    d1.innerText = "";
+    d2.innerText = "";
+    d3.innerText = "";
+    d4.innerText = "";
+    d5.innerText = "";
+    d6.innerText = "";
+    d7.innerText = "";
+    d8.innerText = "";
+    d9.innerText = "";
+  }
+  else{
+    alert('There is nothing to cancel')
+  }
+}
+const cancel = () => {
+  if( d1.innerText != "" && d2.innerText != "" && d3.innerText != "" && d4.innerText != "" && d5.innerText != "" && d6.innerText != "" && d7.innerText != "" && d8.innerText != "" && d9.innerText != ""){
+    d1.innerText = "";
+    d2.innerText = "";
+    d3.innerText = "";
+    d4.innerText = "";
+    d5.innerText = "";
+    d6.innerText = "";
+    d7.innerText = "";
+    d8.innerText = "";
+    d9.innerText = "";
+  }
+  else{
+    alert('There is nothing to cancel')
+  }
 }
 const tPlay = () =>{
   audio.loop = true;
